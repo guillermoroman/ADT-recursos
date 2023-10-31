@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.sql.SQLOutput;
 
 // Ejemplo de uso de RandomAccessFile como pequeña base de datos
 public class Estudiante {
@@ -9,8 +10,30 @@ public class Estudiante {
 
     public static void main(String[] args) {
         añadirEstudiantesDeEjemplo();
+        pruebasDeLectura();
     }
 
+    public static void pruebasDeLectura() {
+        try{
+            RandomAccessFile raf = new RandomAccessFile("estudiantes.dat", "r");
+
+            int id = raf.readInt();
+            char[] nombreChars = new char[20];
+            for (int i = 0; i < nombreChars.length; i++) {
+                nombreChars[i] = raf.readChar();
+            }
+
+            String nombre = new String (nombreChars).trim();
+            System.out.printf(nombre);
+
+            double calificacion = raf.readDouble();
+            System.out.println(calificacion);
+
+        } catch (IOException e) {
+            System.out.println("Ha ocurrido un error de lectura");
+        }
+
+    }
     public static void añadirEstudiantesDeEjemplo() {
 
         Estudiante[] estudiantes = {
