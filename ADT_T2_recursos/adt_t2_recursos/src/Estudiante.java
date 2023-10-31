@@ -10,17 +10,17 @@ public class Estudiante {
 
     public static void main(String[] args) {
         añadirEstudiantesDeEjemplo();
-        pruebasDeLectura();
+        lecturaDeRegistro(1);
     }
 
-    public static void pruebasDeLectura() {
+    public static void lecturaDeRegistro(int n) {
         try{
             RandomAccessFile raf = new RandomAccessFile("estudiantes.dat", "r");
 
             //Saltar al registro 3
             int tamañoRegistro = (Integer.BYTES + (20 * Character.BYTES) + Double.BYTES);
 
-            raf.seek(2 * tamañoRegistro);
+            raf.seek((n-1) * tamañoRegistro);
 
             int id = raf.readInt();
             char[] nombreChars = new char[20];
