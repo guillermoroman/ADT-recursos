@@ -21,7 +21,20 @@ public class Estudiante {
                 new Estudiante(5, "Mario", 7.83)
         };
 
+        try {
+            RandomAccessFile raf = new RandomAccessFile("estudiantes.dat", "rw");
 
+            for (Estudiante estudiante : estudiantes) {
+                raf.writeInt(estudiante.getId());
+                raf.writeChars(String.format ("%-20s", estudiante.getNombre()));
+                raf.writeDouble(estudiante.getCalificacion());
+
+            }
+
+            raf.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public Estudiante (int id, String nombre, double calificacion) {
