@@ -19,10 +19,8 @@ public class Estudiante {
 
             //Saltar al registro 3
             int tamañoRegistro = (Integer.BYTES + (20 * Character.BYTES) + Double.BYTES);
-            System.out.println(Integer.BYTES);
-            System.out.println(Character.BYTES);
-            System.out.println(Double.BYTES);
-            System.out.println(tamañoRegistro);
+
+            raf.seek(2 * tamañoRegistro);
 
             int id = raf.readInt();
             char[] nombreChars = new char[20];
