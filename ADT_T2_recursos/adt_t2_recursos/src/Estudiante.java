@@ -17,17 +17,25 @@ public class Estudiante {
         try{
             RandomAccessFile raf = new RandomAccessFile("estudiantes.dat", "r");
 
+            //Saltar al registro 3
+            int tamañoRegistro = (Integer.BYTES + (20 * Character.BYTES) + Double.BYTES);
+            System.out.println(Integer.BYTES);
+            System.out.println(Character.BYTES);
+            System.out.println(Double.BYTES);
+            System.out.println(tamañoRegistro);
+
             int id = raf.readInt();
             char[] nombreChars = new char[20];
             for (int i = 0; i < nombreChars.length; i++) {
                 nombreChars[i] = raf.readChar();
             }
-
             String nombre = new String (nombreChars).trim();
-            System.out.printf(nombre);
-
             double calificacion = raf.readDouble();
-            System.out.println(calificacion);
+
+            Estudiante estudiante = new Estudiante(id, nombre, calificacion);
+            System.out.println(estudiante);
+
+            raf.close();
 
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error de lectura");
