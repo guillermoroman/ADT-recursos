@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class LecturaEscritura {
@@ -11,6 +12,12 @@ public class LecturaEscritura {
             } else {
                 System.out.println("El fichero ya existe.");
             }
+
+            FileWriter fw = new FileWriter(fich);
+            fw.write("Este es un texto escrito con FileWriter");
+
+            fw.close();
+
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error.");
             e.printStackTrace();
