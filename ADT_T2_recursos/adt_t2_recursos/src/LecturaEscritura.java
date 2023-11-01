@@ -6,8 +6,16 @@ import java.io.IOException;
 public class LecturaEscritura {
     public static void main(String[] args) {
 
+        escribirEnArchivo("ficheroDePrueba.txt");
+
+        imprimirArchivo("ficheroDePrueba.txt");
+
+
+    }
+    public static void escribirEnArchivo(String nombreDeArchivo){
+
         try {
-            File fich = new File("ficheroDePrueba.txt");
+            File fich = new File(nombreDeArchivo);
             if (fich.createNewFile()) {
                 System.out.println("Fichero creado: " + fich.getName());
             } else {
@@ -27,5 +35,8 @@ public class LecturaEscritura {
             System.out.println("Ha ocurrido un error.");
             e.printStackTrace();
         }
+    }
+    public static void imprimirArchivo(String nombreDeArchivo){
+
     }
 }
