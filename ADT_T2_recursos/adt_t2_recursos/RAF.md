@@ -1,3 +1,4 @@
+# RandomAccessFile
 Vamos a crear un programa que nos ayude a comprender cómo funciona la clase RandomAccessFile y el acceso aleatorio a archivos. Cuando hablamos de acceso aleatorio, recordemos que nos referimos a poder acceder a una parte deseada de un archivo, sin necesidad de leer previamente los registros que se encontrarán en el archivo antes del lugar al que queremos acceder.
 
 Veamos primero una representación de cómo se guardan en memoria
