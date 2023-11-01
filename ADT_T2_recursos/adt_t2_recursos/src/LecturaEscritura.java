@@ -1,3 +1,4 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,8 +16,12 @@ public class LecturaEscritura {
 
             FileWriter fw = new FileWriter(fich);
             fw.write("Este es un texto escrito con FileWriter");
-
             fw.close();
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fich, true));
+            bw.write("\nEsta es una nueva linea.");
+
+            bw.close();
 
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error.");
