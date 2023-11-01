@@ -1,7 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class LecturaEscritura {
     public static void main(String[] args) {
@@ -37,6 +34,20 @@ public class LecturaEscritura {
         }
     }
     public static void imprimirArchivo(String nombreDeArchivo){
+        try {
+            File fich = new File(nombreDeArchivo);
+            FileReader fr = new FileReader(fich);
 
+            int caracter;
+
+            while ((caracter = fr.read()) != -1){
+                System.out.print((char)caracter);
+            }
+            fr.close();
+
+        } catch (IOException e) {
+            System.out.println("Error de lectura");
+            e.printStackTrace();
+        }
     }
 }
