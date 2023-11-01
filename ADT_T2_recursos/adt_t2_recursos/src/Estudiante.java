@@ -17,7 +17,7 @@ public class Estudiante {
         try{
             RandomAccessFile raf = new RandomAccessFile("estudiantes.dat", "r");
 
-            //Saltar al registro 3
+            //Saltar al registro N
             int tamañoRegistro = (Integer.BYTES + (20 * Character.BYTES) + Double.BYTES);
 
             raf.seek((n-1) * tamañoRegistro);
