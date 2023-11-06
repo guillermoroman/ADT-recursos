@@ -1,13 +1,14 @@
 import java.io.*;
+import java.sql.SQLOutput;
 
 public class LecturaEscritura {
     public static void main(String[] args) {
 
         escribirEnArchivo("ficheroDePrueba.txt");
 
-        imprimirArchivo("ficheroDePrueba.txt");
+        imprimirSinBuffer("ficheroDePrueba.txt");
 
-
+        imprimirConBuffer("ficheroDePrueba.txt");
     }
     public static void escribirEnArchivo(String nombreDeArchivo){
 
@@ -33,7 +34,7 @@ public class LecturaEscritura {
             e.printStackTrace();
         }
     }
-    public static void imprimirArchivo(String nombreDeArchivo){
+    public static void imprimirSinBuffer(String nombreDeArchivo){
         try {
             File fich = new File(nombreDeArchivo);
             FileReader fr = new FileReader(fich);
@@ -43,6 +44,7 @@ public class LecturaEscritura {
             while ((caracter = fr.read()) != -1){
                 System.out.print((char)caracter);
             }
+            System.out.println();
             fr.close();
 
         } catch (IOException e) {
@@ -50,4 +52,18 @@ public class LecturaEscritura {
             e.printStackTrace();
         }
     }
+        public static void imprimirConBuffer(String nombreDeArchivo){
+
+            // Try-with-resources
+
+            try (BufferedReader br = new BufferedReader(new FileReader(nombreDeArchivo))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    System.out.println(linea);
+                }
+            } catch (IOException e){
+                System.out.println("Error de lectura con buffer");
+                e.printStackTrace();
+            }
+        }
 }
