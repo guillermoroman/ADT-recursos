@@ -93,3 +93,36 @@ try (Connection connection = DriverManager.getConnection(url, usuario, contrasen
     }  
 } catch (SQLException e) {
 ```
+
+## Clase de prueba - ConexionSimple.java
+
+```java
+import java.sql.*;
+
+public class ConexionSimple {
+
+    public static void main(String[] args) {
+        pruebaSencilla();
+    }
+    public static void pruebaSencilla(){
+        // URL de conexión a la base de datos
+
+        String url = "jdbc:mariadb://localhost:3306/mysql";
+        // Nombre de usuario y contraseña
+        String usuario = "root";
+        String contrasena = "";
+
+        // Establecer la conexión
+        try (Connection connection = DriverManager.getConnection(url, usuario, contrasena)) {
+            if (connection != null) {
+                System.out.println("Conectado con éxito a la base de datos.");
+                // Aquí puedes realizar operaciones con la base de datos
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al conectar a la base de datos.");
+        }
+    }
+}
+
+```
