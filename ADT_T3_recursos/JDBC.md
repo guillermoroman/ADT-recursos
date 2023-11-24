@@ -58,6 +58,21 @@ String contrasena = "";
 	3. Apply. OK.
 3. Veremos el archivo jar en External Libraries dentro del navegador de archivos.
 
+```java
+String url = "jdbc:mariadb://localhost:3306/[nombre_db]";
+        // Nombre de usuario y contraseña
+        String usuario = "root";
+        String contrasena = ""; 
+// Establecer la conexión  
+
+try (Connection connection = DriverManager.getConnection(url, usuario, contrasena)) {  
+    if (connection != null) {  
+        System.out.println("Conectado con éxito a la base de datos.");  
+    }  
+} catch (SQLException e) {
+```
+
+
 ## JAR PostgreSQL en IntelliJ
 1. Descargar driver (archivo JAR): https://jdbc.postgresql.org
 2. Añadir la librería:
