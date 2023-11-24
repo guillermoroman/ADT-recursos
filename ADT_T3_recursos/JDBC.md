@@ -53,7 +53,7 @@ String contrasena = "";
 ## JAR MariaDB en IntelliJ
 1. Descargar driver (archivo JAR): https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector
 2. Añadir la librería:
-	1. File > Project Structure > Modules > + > JARs or directories
+	1. File > Project Structure > Modules > Dependencies Tab > + > JARs or directories
 	2. Locate the file.
 	3. Apply. OK.
 3. Veremos el archivo jar en External Libraries dentro del navegador de archivos.
@@ -76,7 +76,7 @@ try (Connection connection = DriverManager.getConnection(url, usuario, contrasen
 ## JAR PostgreSQL en IntelliJ
 1. Descargar driver (archivo JAR): https://jdbc.postgresql.org
 2. Añadir la librería:
-	1. File > Project Structure > Modules > + > JARs or directories
+	1. File > Project Structure > Modules > Dependencies Tab > + > JARs or directories
 	2. Locate the file.
 	3. Apply. OK.
 3. Veremos el archivo jar en External Libraries dentro del navegador de archivos.
