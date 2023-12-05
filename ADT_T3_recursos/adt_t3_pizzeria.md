@@ -18,6 +18,19 @@ INSERT INTO pizzas (nombre, coste, precio, ingredientes) VALUES ('Margherita', 3
 > - Ingredientes
 
 > [!NOTE]
+> Modificar métodos pruebaSencilla y listarPizzas para utilizar la clase DatabaseConnection.
+
+> [!NOTE]
+> Añadir método AñadirPizza que crea un objeto de tipo pizza y lo añade a la base de datos
+
+> [!NOTE]
+> Añadir método BorrarPizza que, dado un nombre de una pizza, la borra de la base de datos.
+
+> [!NOTE]
+> Añadir método ModificarIngredientes que, dando un nombre de una pizza existente, y un String de ingredientes, sustituye los existentes por los nuevos.
+
+
+> [!NOTE]
 > Crear un `ArrayList<Pizza>` y guardar en el mismo todas las pizzas de la base de datos.
 > 
 > Reflexionar sobre las ventajas y los inconvenientes de trabajar con objetos en este caso, o directamente con la base de datos. A la hora de listar, crear, filtrar, modificar, borrar.
