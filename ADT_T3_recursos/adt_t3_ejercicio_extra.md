@@ -23,6 +23,8 @@
 
 **Instrucciones Específicas:**
 - Las clases `Producto` y `Proveedor` deben incluir atributos como `id`, `nombre`, `precio`, `nombreProveedor`, etc., con métodos get y set.
+- La clase `Producto`incluirá los atributos: `id`, `nombre`, `precio`, `id_proveedor`.
+- La clase `Proveedor`incluirá los atributos: `id`, `nombre`, `dirección`, `email`.
 - La clase `ConexionBD` gestionará los detalles de conexión a la base de datos.
 - `InicializadorBD` se encargará de la creación de las tablas y la inserción inicial de datos.
 - Las interfaces DAO definirán métodos como `agregar`, `obtenerPorId`, `obtenerTodos`, `actualizar` y `eliminar`.
