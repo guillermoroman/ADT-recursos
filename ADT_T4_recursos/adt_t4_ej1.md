@@ -11,6 +11,7 @@ Asegúrate de tener gestionar apropiadamente las dependencias en el archivo `pom
 #### Entidad Profesor
 
 Atributos: 
+- id
 - nombre
 - email
 - cursos
@@ -18,6 +19,7 @@ Atributos:
 #### Entidad Curso
 
 Atributos:
+- id
 - nombre
 - creditos
 - profesor
@@ -26,6 +28,7 @@ Atributos:
 #### Entidad Estudiante
 
 Atributos:
+- id
 - nombre
 - email
 - cursos
